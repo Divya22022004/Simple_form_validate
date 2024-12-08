@@ -1,0 +1,33 @@
+<html>
+<head>
+<script>
+function validateform()
+{
+var employeeID=document.getElementById("employeeID").value;
+var employeeName=document.getElementById("employeeName").value;
+var id=/^[0-9]+$/;
+var name=/^[A-Za-z]+$/;
+if(!id.test(employeeID))
+{
+alert("Employee ID should contain only numbers(0-9).");
+return false;
+}
+if(!name.test(employeeName))
+{
+alert("Employee name should contain only numbers(A-Z).");
+return false;
+}
+return true;
+}
+</script>
+</head><body>
+<h1>Employee Details</h1>
+<form onsubmit="return validateform()">
+<label for="employeeID">Employee ID:</label>
+<input type="text" id="employeeID"><br>
+<label for="employeeName">Employee Name:</label>
+<input type="text" id="employeeName"><br>
+<input type="submit" value="submit">
+</form>
+</body>
+</html>
